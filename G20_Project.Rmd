@@ -1,0 +1,162 @@
+---
+title: "Exploring Global Economic and Social Indicators in G20 Countries (Python)"
+author: "IY1 Computer Science Sep 24 Cohort"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Introduction
+
+The **G20** (Group of Twenty) is an international forum comprising 19 countries plus the European Union. It represents the world's major advanced and emerging economies. In this project, we explore various economic and social indicators of G20 countries using Python. We will work with a dataset containing information on GDP, HDI, population, and more.
+
+# Overview of the Dataset
+
+The dataset (file: `G_20_Data_CN.csv`) contains the following columns:
+
+- **Country:** Name of the country (or union) within the G20.
+- **Trad_bill_USD:** Traditional bill in USD (an economic indicator).
+- **Nom_GDP_mill:** Nominal GDP in million USD.
+- **PPP_GDP_mill_USD:** GDP (Purchasing Power Parity) in million USD.
+- **Nom_GDP_Per_capita:** Nominal GDP per capita.
+- **PPP_GDP_PerCapita:** GDP per capita at purchasing power parity.
+- **HDI:** Human Development Index.
+- **Population:** Total population.
+- **Area (km²):** Geographic area.
+- **IMF Classification:** Classification by the IMF (e.g., Advanced, Emerging).
+- **Capital:** The capital city.
+- **Region:** Geographic region.
+
+# Project Tasks
+
+Students are required to:
+
+1. **Data Preparation and Cleaning:**  
+   - Load the CSV data using Python.
+   - Clean numeric columns (e.g., remove commas and convert to numeric).
+   - Set the "Country" column as the index.
+
+2. **Adding a New Variable:**  
+   - Create a new variable classifying countries as "English Speaker" or "Non-English Speaker" based on a given list.
+
+3. **Descriptive Statistics and Visualization:**  
+   - Generate descriptive statistics.
+   - Create visualizations (histograms, box plots) to explore relationships in the data.
+
+4. **Research Questions:**  
+   - Define one or more research questions (e.g., differences in GDP per capita between English-speaking and non-English-speaking countries).
+   - Answer these questions using appropriate analysis techniques.
+
+# Python Code Implementation
+
+Below are the Python code chunks that perform each of the steps.
+
+## 1. Load and Clean the Data
+
+```{python, echo=TRUE, message=FALSE, warning=FALSE}
+import pandas as pd
+
+# Specify the full file path to the CSV file.
+
+
+file_path = r"C:\Users\Arash\OneDrive - Royal Holloway University of London\Desktop\RH\Python\Assignments\24_25\G_20\G_20_Data_CN.csv"
+
+# Read the CSV file (using 'latin1' encoding if needed)
+df = pd.read_csv(file_path, encoding="latin1")
+print("Initial Data:")
+print(df.head())
+
+
+# Remove commas from numeric columns and convert them 
+for col in df.select_dtypes(include='object').columns:
+    df[col] = df[col].str.replace(",", "", regex=True)
+    df[col] = pd.to_numeric(df[col], errors='ignore')
+
+print("\nCleaned Data:")
+print(df.head())
+```
+
+## 2. Set "Country" as the Index
+
+```{python, echo=TRUE}
+# Set the "Country" column as the index
+df.set_index("Country", inplace=True)
+print("\nData with 'Country' as the Index:")
+print(df.head())
+```
+
+## 3. Add a New Variable: English Speaker Classification
+
+```{python, echo=TRUE}
+# Define a list of predominantly English-speaking countries
+english_speakers = ["Australia", "Canada", "United Kingdom", "United States"]
+
+# Create a new column 'English_Speaker' based on the index
+df["English_Speaker"] = df.index.isin(english_speakers)
+print("\nData with 'English_Speaker' column added:")
+print(df.head())
+```
+
+## 4. Descriptive Statistics and Visualization
+
+### Descriptive Statistics
+
+```{python, echo=TRUE}
+# Display summary statistics for numeric columns
+print("\nDescriptive Statistics:")
+print(df.describe())
+```
+
+### Histogram: Nominal GDP per Capita
+
+```{python, echo=TRUE, fig.width=8, fig.height=6}
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(8,6))
+sns.histplot(df["Nom_GDP_Per_capita"].dropna(), bins=10, kde=True, color="skyblue", edgecolor="black")
+plt.title("Distribution of Nominal GDP per Capita")
+plt.xlabel("Nominal GDP per Capita")
+plt.ylabel("Frequency")
+plt.show()
+```
+
+### Box Plot: Nominal GDP per Capita by English Speaker Status
+
+```{python, echo=TRUE, fig.width=8, fig.height=6}
+plt.figure(figsize=(8,6))
+sns.boxplot(x="English_Speaker", y="Nom_GDP_Per_capita", data=df, palette="Set2")
+plt.title("Nominal GDP per Capita by English Speaker Status")
+plt.xlabel("English Speaker (True/False)")
+plt.ylabel("Nominal GDP per Capita")
+plt.show()
+```
+
+## 5. Research Questions and Analysis
+
+For example, let’s compare the average Nominal GDP per Capita for English-Speaking vs. Non-English-Speaking countries.
+
+```{python, echo=TRUE}
+group_summary = df.groupby("English_Speaker")["Nom_GDP_Per_capita"].mean()
+print("\nAverage Nominal GDP per Capita by English Speaker status:")
+print(group_summary)
+```
+
+# Defining and Answering Research Questions
+
+Students should define one or more research questions such as:
+
+- **RQ1:** How does Nominal GDP per Capita differ between English-speaking and non-English-speaking G20 countries?
+- **RQ2:** What is the relationship between the Human Development Index (HDI) and Nominal GDP per Capita among G20 countries?
+- **RQ3:** How do emerging economies differ from advanced economies on key economic indicators?
+
+Based on your chosen research question(s), use techniques such as group-by comparisons, correlation analysis, regression, or hypothesis testing to explore the data and draw conclusions.
+
+# Conclusion
+
+In your final report, include:
+
+- A brief introduction to the G20 and dataset description.
+- Details on data cleaning and variable creation.
+- Descriptive statistics and visualizations addressing your research question(s).
+- A discussion of your findings and conclusions.
+

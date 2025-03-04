@@ -1,0 +1,22 @@
+,Country,Trad_bill_USD,Nom_GDP_mill,PPP_GDP_mill_USD,Nom_GDP_Per_capita,PPP_GDP_PerCapia,HDI,Population,Area (km²),IMF Classification,Capital,Region,IMF Classification.1,Capital.1,Region.1
+0,Argentina,170.1,604382,1353804,12814,28704,0.849,46300000,2780400,Emerging,Buenos Aires,South America,Emerging,Buenos Aires,South America
+1,Australia,721.4,1802006,1897885,65966,69475,0.946,26141369,7692024,Advanced,Canberra,Oceania,Advanced,Canberra,Oceania
+2,Brazil,626.4,2188419,4702004,10296,22123,0.76,217240060,8515767,Emerging,BrasÃ­lia,South America,Emerging,BrasÃ­lia,South America
+3,Canada,1179.1,2214796,2582228,53834,62766,0.935,38743000,9984670,Advanced,Ottawa,North America,Advanced,Ottawa,North America
+4,China,6309.6,18273357,37072086,12969,26310,0.788,1411750000,9596960,Emerging,Beijing,Asia,Emerging,Beijing,Asia
+5,France,1435.8,3174099,4359372,48012,65940,0.91,68305148,640679,Advanced,Paris,Europe,Advanced,Paris,Europe
+6,Germany,3226.9,4710032,6017222,55521,70930,0.95,84316622,357114,Advanced,Berlin,Europe,Advanced,Berlin,Europe
+7,India,1176.8,3889130,16019970,2698,11112,0.644,1406632000,3287263,Emerging,New Delhi,Asia,Emerging,New Delhi,Asia
+8,Indonesia,529.4,1402590,4658321,4981,16542,0.713,279088893,1904569,Emerging,Jakarta,Asia,Emerging,Jakarta,Asia
+9,Italy,1346.4,2376510,3597954,40287,60993,0.906,61095551,301336,Advanced,Rome,Europe,Advanced,Rome,Europe
+10,Japan,1644.2,4070094,6572198,32859,53059,0.92,125592404,377930,Advanced,Tokyo,Asia,Advanced,Tokyo,Asia
+11,Mexico,1204.5,1848125,3303067,13972,24971,0.781,131541424,1964375,Emerging,Mexico City,North America,Emerging,Mexico City,North America
+12,South Korea,1415.0,1869916,3258366,36132,62960,0.929,51844834,100210,Advanced,Seoul,Asia,Advanced,Seoul,Asia
+13,Russia,772.3,2184316,6909381,14953,47299,0.821,145807429,17098242,Emerging,Moscow,Europe/Asia,Emerging,Moscow,Europe/Asia
+14,Saudi Arabia,598.8,1100706,2112880,32881,63118,0.875,36168000,2149690,Emerging,Riyadh,Middle East,Emerging,Riyadh,Middle East
+15,South Africa,259.1,403045,993745,6377,15723,0.717,61060000,1221037,Emerging,Pretoria,Africa,Emerging,Pretoria,Africa
+16,Turkey,617.9,1344318,3456771,15666,40283,0.855,85551932,783562,Emerging,Ankara,Europe/Asia,Emerging,Ankara,Europe/Asia
+17,United Kingdom,1353.3,3587545,4282173,52423,62574,0.94,68492933,242495,Advanced,London,Europe,Advanced,London,Europe
+18,United States,5441.0,29167779,29167779,86601,86601,0.927,337341954,9833517,Advanced,Washington D.C.,North America,Advanced,Washington D.C.,North America
+19,European Union,5858.4,19403162,28044235,43353,62660,0.9,446828803,4233262,Advanced ,Brussels,Europe,Advanced (majority)[f],Brussels,Europe
+20,African Union,1379.0,2780597,10155027,1941,7087,0.577,1393676444,29922059,Emerging,Addis Ababa,Africa,Emerging,Addis Ababa,Africa
